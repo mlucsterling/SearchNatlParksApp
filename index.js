@@ -2,11 +2,11 @@
 
 /*obtain checked States from form*/
 function getStates() {
-    let stateValues = document.querySelectorAll(':checked').value
+    const stateValues = document.querySelectorAll(':checked').value
     let stateArray = []
     for (let i = 0; i < stateValues.length; i++) {
         $(stateArray).push();
-        }
+        };
     let requestedStates = '?stateCode='+stateArray.join('%2C');
     console.log(requestedStates);
 }
@@ -30,7 +30,8 @@ function makeRequest() {
 function submitForm() {
     $('form').submit(event => {
         event.preventDefault();
-        console.log(`submitForm activated`)
+        console.log(`submitForm activated`);
+        getStates();
         makeRequest();
     });
 };
